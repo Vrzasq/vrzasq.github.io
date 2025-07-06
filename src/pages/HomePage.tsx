@@ -18,7 +18,7 @@ const HomePage = () => {
                     download="jakub_romel_en.pdf"
                     className="block px-8 py-4 rounded-xl bg-gradient-to-r from-green-500 to-cyan-600 text-white text-lg font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 text-center border-2 border-transparent hover:border-white"
                 >
-                    🇬🇧 Download CV (EN)
+                    🇬🇧 / 🇺🇸 Download CV (EN)
                 </a>
             </div>
         </div>
