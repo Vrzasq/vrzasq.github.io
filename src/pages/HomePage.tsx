@@ -42,11 +42,10 @@ const HomePage = () => {
                 </div>
                 <div
                     className={`mt-20 flex justify-center group select-none ${isWeaving ? '[transform:translateY(-8px)_rotate(5deg)]' : ''}`}
-                    onTouchStart={() => setIsWeaving(true)}
-                    onTouchEnd={() => setIsWeaving(false)}
+                    onClick={() => isMobile && setIsWeaving(prev => !prev)}
                     onMouseEnter={() => setIsWeaving(true)}
                     onMouseLeave={() => setIsWeaving(false)}
-                    style={{ transition: 'transform 0.5s' }}
+                    style={{ transition: 'transform 0.3s' }}
                 >
                     <img
                         src={mushroom}
