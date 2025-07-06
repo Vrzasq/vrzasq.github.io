@@ -5,7 +5,6 @@ import photo from "../assets/js.jpg";
 import mushroom from '../assets/mushroom.png'; // Adjust path and filename as needed
 
 const HomePage = () => {
-    // State for mobile touch animation
     const [isWeaving, setIsWeaving] = React.useState(false);
 
     return (
