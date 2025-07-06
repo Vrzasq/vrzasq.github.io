@@ -9,7 +9,7 @@ const HomePage = () => {
 
     return (
         <div className="flex flex-col items-center justify-between min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 py-4">
-            <div className="flex flex-col items-center w-full">
+            <div className="mt-8 flex flex-col items-center w-full">
                 <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-8 drop-shadow-lg tracking-tight text-center">
                     .NET Developer
                 </h1>
@@ -35,20 +35,20 @@ const HomePage = () => {
                         🇬🇧 / 🇺🇸 Download CV (EN)
                     </a>
                 </div>
-            </div>
-            <div
-                className={`mt-2 mb-10 pb-2 flex justify-center group select-none ${isWeaving ? '[transform:translateY(-8px)_rotate(5deg)]' : ''}`}
-                onTouchStart={() => setIsWeaving(true)}
-                onTouchEnd={() => setIsWeaving(false)}
-                onMouseEnter={() => setIsWeaving(true)}
-                onMouseLeave={() => setIsWeaving(false)}
-                style={{ transition: 'transform 0.5s' }}
-            >
-                <img
-                    src={mushroom}
-                    alt="mushrooms"
-                    className="w-16 h-16 md:w-20 md:h-20 lg:w-25 lg:h-25 object-contain drop-shadow-lg"
-                />
+                <div
+                    className={`mt-20 flex justify-center group select-none ${isWeaving ? '[transform:translateY(-8px)_rotate(5deg)]' : ''}`}
+                    onTouchStart={() => setIsWeaving(true)}
+                    onTouchEnd={() => setIsWeaving(false)}
+                    onMouseEnter={() => setIsWeaving(true)}
+                    onMouseLeave={() => setIsWeaving(false)}
+                    style={{ transition: 'transform 0.5s' }}
+                >
+                    <img
+                        src={mushroom}
+                        alt="mushrooms"
+                        className="w-16 h-16 md:w-20 md:h-20 lg:w-25 lg:h-25 object-contain drop-shadow-lg"
+                    />
+                </div>
             </div>
         </div>
     )
