@@ -9,7 +9,7 @@ const HomePage = () => {
     const [isWeaving, setIsWeaving] = useState(false);
     const [isProfileLarge, setIsProfileLarge] = useState(false);
 
-    const scale = isMobile ? '250' : "150";
+    let scale = isMobile ? 'scale(2)' : 'scale(1.3)';
 
     return (
         <div className="flex flex-col items-center justify-between min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 py-4">
@@ -20,9 +20,9 @@ const HomePage = () => {
                 <img
                     src={photo}
                     alt="Profile"
-                    className={`w-1/5 aspect-square object-cover rounded-full border-4 border-white shadow-xl mb-10 object-center cursor-pointer transition-transform duration-300 ${isProfileLarge ? 'scale-' + scale + ' z-50' : ''}`}
-                    //style={{ objectPosition: 'center' }}
-                    onPointerUp={() => setIsProfileLarge(!isProfileLarge) }                 
+                    className="w-1/5 aspect-square object-cover rounded-full border-4 border-white shadow-xl mb-10 object-center cursor-pointer transition-transform duration-300"
+                    style={{ objectPosition: 'center', transform: isProfileLarge ? scale : 'scale(1)', zIndex: isProfileLarge ? 50 : 'auto', transition: 'transform 0.3s' }}
+                    onClick={() => setIsProfileLarge(!isProfileLarge)}
                 />
                 <div className="space-y-6">
                     <a
