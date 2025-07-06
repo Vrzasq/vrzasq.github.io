@@ -22,9 +22,7 @@ const HomePage = () => {
                     alt="Profile"
                     className={`w-1/5 aspect-square object-cover rounded-full border-4 border-white shadow-xl mb-10 object-center cursor-pointer transition-transform duration-300 ${isProfileLarge ? 'scale-' + scale + ' z-50' : ''}`}
                     style={{ objectPosition: 'center' }}
-                    onClick={() => setIsProfileLarge(!isProfileLarge)}
-                    onTouchEnd={(e) => { e.preventDefault(); setIsProfileLarge(!isProfileLarge); }}
-                    onTouchStart={e => e.preventDefault()}
+                    onPointerUp={() => setIsProfileLarge(!isProfileLarge) }                 
                 />
                 <div className="space-y-6">
                     <a
