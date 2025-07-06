@@ -8,8 +8,9 @@ const MainLayout = () => {
     <>
         <Outlet />
         <ToastContainer position='top-center' />
+        
     </>
   );
 }
 
-export default MainLayout
+export default MainLayout;
