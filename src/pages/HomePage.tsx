@@ -1,11 +1,15 @@
-import React from 'react';
+import { useState } from 'react';
+import { isMobile } from 'react-device-detect';
 import cv_pl from "../assets/pdf/jakub_romel_pl.pdf";
 import cv_en from "../assets/pdf/jakub_romel_en.pdf";
 import photo from "../assets/js.jpg";
 import mushroom from '../assets/mushroom.png'; // Adjust path and filename as needed
 
 const HomePage = () => {
-    const [isWeaving, setIsWeaving] = React.useState(false);
+    const [isWeaving, setIsWeaving] = useState(false);
+    const [isProfileLarge, setIsProfileLarge] = useState(false);
+
+    const scale = isMobile ? '250' : "150";
 
     return (
         <div className="flex flex-col items-center justify-between min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 py-4">
@@ -16,8 +20,9 @@ const HomePage = () => {
                 <img
                     src={photo}
                     alt="Profile"
-                    className="w-1/5 aspect-square object-cover rounded-full border-4 border-white shadow-xl mb-10 object-center"
+                    className={`w-1/5 aspect-square object-cover rounded-full border-4 border-white shadow-xl mb-10 object-center cursor-pointer transition-transform duration-300 ${isProfileLarge ? 'scale-' + scale + ' z-50' : ''}`}
                     style={{ objectPosition: 'center' }}
+                    onClick={() => setIsProfileLarge(!isProfileLarge)}
                 />
                 <div className="space-y-6">
                     <a
