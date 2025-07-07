@@ -1,29 +1,18 @@
-import { useState } from 'react';
-import { isMobile } from 'react-device-detect';
 import cv_pl from "../assets/pdf/jakub_romel_pl.pdf";
 import cv_en from "../assets/pdf/jakub_romel_en.pdf";
 import photo from "../assets/js.jpg";
 import mushroom from '../assets/mushroom.png'; // Adjust path and filename as needed
+import EnlargableImage from '../components/EnlargableImage';
+import WeavingImage from '../components/WeavingImage';
 
 const HomePage = () => {
-    const [isWeaving, setIsWeaving] = useState(false);
-    const [isProfileLarge, setIsProfileLarge] = useState(false);
-
-    let scale = isMobile ? 'scale(2)' : 'scale(1.3)';
-
     return (
         <div className="flex flex-col items-center justify-between min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 py-4">
             <div className="mt-8 flex flex-col items-center w-full">
                 <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-8 drop-shadow-lg tracking-tight text-center">
                     .NET Developer
                 </h1>
-                <img
-                    src={photo}
-                    alt="Profile"
-                    className="w-1/5 aspect-square object-cover rounded-full border-4 border-white shadow-xl mb-10 object-center cursor-pointer transition-transform duration-300"
-                    style={{ objectPosition: 'center', transform: isProfileLarge ? scale : 'scale(1)', zIndex: isProfileLarge ? 50 : 'auto', transition: 'transform 0.3s' }}
-                    onClick={() => setIsProfileLarge(!isProfileLarge)}
-                />
+                <EnlargableImage image={photo}/>
                 <div className="space-y-6">
                     <a
                         href={cv_pl}
@@ -40,19 +29,7 @@ const HomePage = () => {
                         🇬🇧 / 🇺🇸 Download CV (EN)
                     </a>
                 </div>
-                <div
-                    className={`mt-20 flex justify-center group select-none ${isWeaving ? '[transform:translateY(-8px)_rotate(5deg)]' : ''}`}
-                    onClick={() => isMobile && setIsWeaving(!isWeaving)}
-                    onMouseEnter={() => setIsWeaving(true)}
-                    onMouseLeave={() => setIsWeaving(false)}
-                    style={{ transition: 'transform 0.3s' }}
-                >
-                    <img
-                        src={mushroom}
-                        alt="mushrooms"
-                        className="w-16 h-16 md:w-20 md:h-20 lg:w-25 lg:h-25 object-contain drop-shadow-lg"
-                    />
-                </div>
+                <WeavingImage image={mushroom}/>
             </div>
         </div>
     )
